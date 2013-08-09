@@ -5,8 +5,9 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'ondeeuparei.core.views.home', name='home'),
+    url(r'^$', 'ondeeuparei.core.views.login', name='login'),
     url(r'^board', 'ondeeuparei.core.views.board', name='board'),
+    url(r'^logout', 'ondeeuparei.core.views.logout', name='logout'),
     url(r'', include('social_auth.urls')),
     # Examples:
     # url(r'^$', 'ondeeuparei.views.home', name='home'),

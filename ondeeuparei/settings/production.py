@@ -135,7 +135,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #Adiciona o backend do Facebook
 AUTHENTICATION_BACKENDS = (
     'social_auth.backends.facebook.FacebookBackend',
-    #'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 #Configuracoes de login do proprio Django
