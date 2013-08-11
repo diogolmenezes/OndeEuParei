@@ -1,4 +1,19 @@
 {% extends 'core/base.html' %}
+{% load i18n %}
 {% block content %}
-
+    <form>
+        <fieldset>
+            <p>
+                <label for="title">Title:</label>
+                <input id="title" type="text"/>
+            </p>
+            <p>
+                <label for="place">Place:</label>
+                <input id="place" type="text"/>
+            </p>
+            <p>
+                <input type="submit"/> {% trans 'or' %} <a href="{% url 'board' %}">{% trans 'back' %}</a>
+            </p>
+        </fieldset>
+    </form>
 {% endblock %}

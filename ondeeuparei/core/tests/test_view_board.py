@@ -29,9 +29,7 @@ class TextViewBoardWithLogin(TestCase):
 
     def test_html(self):
         self.assertContains(self.response, 'href="' + reverse('logout') + '"')
-        self.assertContains(self.response, '<form action="%s" method="post"' % reverse('create'), 1)
-        self.assertContains(self.response, '<input', 3)
-        self.assertContains(self.response, 'csrfmiddlewaretoken', 1)
+        self.assertContains(self.response, 'href="%s"' % reverse('create'), 1)
         self.assertContains(self.response, '<ul class="reminder-list"', 1)
         self.assertContains(self.response, '<li', 1)
         self.assertContains(self.response, 'dexter')

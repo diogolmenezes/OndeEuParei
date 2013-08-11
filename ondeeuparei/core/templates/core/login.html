@@ -1,14 +1,15 @@
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Onde eu parei?</title>
+    <title>{% trans 'Where I was?' %}</title>
 </head>
 <body>
     <section id="container">
-        <h1>OndeEuParei?</h1>
+        <h1>{% trans 'Where I Was?' %}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <a href="{% url 'socialauth_begin' 'facebook' %}">entrar com o facebook</a>
+        <a href="{% url 'socialauth_begin' 'facebook' %}">{% trans 'login with facebook' %}</a>
     </section>
 </body>
 </html>
