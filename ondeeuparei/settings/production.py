@@ -1,5 +1,7 @@
 # Django settings for ondeeuparei project.
+from unipath import Path
 
+PROJECT_DIR = Path(__file__).parent.parent
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

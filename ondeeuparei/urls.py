@@ -6,7 +6,8 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     url(r'^$', 'ondeeuparei.core.views.login', name='login'),
-    url(r'^board', 'ondeeuparei.core.views.board', name='board'),
+    url(r'^board/create/', 'ondeeuparei.core.views.create', name='create'),
+    url(r'^board/', 'ondeeuparei.core.views.board', name='board'),
     url(r'^logout', 'ondeeuparei.core.views.logout', name='logout'),
     url(r'', include('social_auth.urls')),
     # Examples:

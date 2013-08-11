@@ -1,1 +1,15 @@
 {% extends "core/base.html" %}
+{% block content %}
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    <input type="text" value="lembrete" />
+    <input type="submit" value="ok"></input>
+</form>
+
+<ul class="reminder-list">
+{% for reminder in reminders %}
+    <li>{{ reminder.title }} - {{ reminder.place }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

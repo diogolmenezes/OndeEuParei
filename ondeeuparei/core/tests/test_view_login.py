@@ -1,18 +1,16 @@
+# coding: utf-8
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from ondeeuparei import settings
 
 
-class LoginTest(TestCase):
+class TestViewLogin(TestCase):
     fixtures = ['test_user.json']
 
     def setUp(self):
         self.response = self.client.get(reverse('login'))
 
     def test_get(self):
-        """
-        get / deve retornar 200
-        """
         self.assertEqual(200, self.response.status_code)
 
     def test_template(self):
@@ -23,12 +21,12 @@ class LoginTest(TestCase):
         self.assertContains(self.response, '<a', 1)
         self.assertContains(self.response, 'href="/login/facebook', 1)
 
-    def test_login(self):
+    def test_if_login(self):
         self.client.login(username='admin', password='admin')
         response_board = self.client.get(reverse('board'))
         self.assertEqual(200, response_board.status_code)
 
-    def test_logout(self):
+    def test_if_logout(self):
         self.client.login(username='admin', password='admin')
         response_board = self.client.get(reverse('board'))
         self.assertEqual(200, response_board.status_code)
