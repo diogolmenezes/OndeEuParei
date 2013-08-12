@@ -1,18 +1,21 @@
 {% extends 'core/base.html' %}
 {% load i18n %}
 {% block content %}
-    <form>
+    <form action="{% url 'create' %}" method="post">
         <fieldset>
+            {% csrf_token %}
             <p>
-                <label for="title">Title:</label>
-                <input id="title" type="text"/>
+                <label for="{{form.title.id_for_label}}">{{form.title.label}}:</label>
+                {{form.title}}
+                {{form.title.errors}}
             </p>
             <p>
-                <label for="place">Place:</label>
-                <input id="place" type="text"/>
+                <label for="{{form.place.id_for_label}}">{{form.place.label}}:</label>
+                {{form.place}}
+                {{form.place.errors}}
             </p>
             <p>
-                <input type="submit"/> {% trans 'or' %} <a href="{% url 'board' %}">{% trans 'back' %}</a>
+                <input type="submit" value="{% trans 'create' %}" /> {% trans 'or' %} <a href="{% url 'board' %}">{% trans 'back' %}</a>
             </p>
         </fieldset>
     </form>
