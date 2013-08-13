@@ -52,18 +52,18 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = PROJECT_DIR.child('media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = PROJECT_DIR.child('static')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -132,6 +132,7 @@ INSTALLED_APPS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'social_auth.context_processors.social_auth_by_type_backends',
+    'django.core.context_processors.static',
 )
 
 #Adiciona o backend do Facebook
@@ -142,7 +143,7 @@ AUTHENTICATION_BACKENDS = (
 
 #Configuracoes de login do proprio Django
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/board'
+LOGIN_REDIRECT_URL = '/auth/'
 
 #Social Auth
 SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
@@ -151,6 +152,7 @@ SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
 #Facebook
 FACEBOOK_APP_ID = '410584382380620'
 FACEBOOK_API_SECRET = '2c9a761b25eff12c401ee5b79380234a'
+FACEBOOK_AUTH_EXTRA_ARGUMENTS = {'display': 'popup'}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

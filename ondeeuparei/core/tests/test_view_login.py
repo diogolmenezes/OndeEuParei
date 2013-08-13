@@ -19,7 +19,9 @@ class TestViewLogin(TestCase):
     def test_html(self):
         self.assertContains(self.response, '<html')
         self.assertContains(self.response, '<a', 1)
-        self.assertContains(self.response, 'href="/login/facebook', 1)
+        self.assertContains(self.response, 'href="/login/facebook/" class="popup"', 1)
+        self.assertContains(self.response, 'all.js')
+        self.assertContains(self.response, 'jquery')
 
     def test_if_login(self):
         self.client.login(username='admin', password='admin')
