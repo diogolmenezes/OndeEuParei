@@ -7,9 +7,11 @@ class TestAuth(TestCase):
         self.response = self.client.get(reverse('auth'))
 
     def test_get(self):
+        ''' url auth must exist '''
         self.assertEqual(200, self.response.status_code)
 
     def test_html(self):
+        ''' auth html must have js to redirect to board and close popup '''
         self.assertContains(self.response, '<script')
         self.assertContains(self.response, 'parent.')
         self.assertContains(self.response, reverse('board'))
