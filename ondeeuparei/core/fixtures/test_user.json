@@ -30,7 +30,7 @@
         "last_login": "2013-08-08T04:03:48.421Z", 
         "groups": [], 
         "user_permissions": [], 
-        "password": "!", 
+        "password": "pbkdf2_sha256$10000$0sidbMHmHZTi$AxxuJYA2RKSkZoCh9ZiBQJqsqukn5jkhszu5eQx8z0g=",
         "email": "", 
         "date_joined": "2013-08-08T01:19:10.326Z"
     }

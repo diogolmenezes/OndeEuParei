@@ -39,15 +39,20 @@ class TestValidCreatePost(TestCase):
     def setUp(self):
         self.client.login(username='admin', password='admin')
         data = dict(title='dexter', place='S08E04', user=mommy.make(User))
-        self.response = self.client.post(reverse('create'), data)
+        self.response = self.client.post(reverse('create'), data, follow=True)
 
     def test_save(self):
         ''' valid post must save reminder '''
         self.assertTrue(Reminder.objects.exists())
 
+
     def test_redirect(self):
         ''' valid post must redirect '''
-        self.assertEqual(302, self.response.status_code)
+        self.assertRedirects(self.response, reverse('board'))
+
+    def test_show_message_on_save(self):
+        ''' must show message on save '''
+        self.assertContains(self.response, 'Success!')
 
 class TestInvalidCreatePost(TestCase):
     fixtures = ['test_user.json']

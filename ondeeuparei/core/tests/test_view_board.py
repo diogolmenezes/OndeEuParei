@@ -34,6 +34,7 @@ class TextViewBoardWithLogin(TestCase):
         self.assertContains(self.response, '<li', 1)
         self.assertContains(self.response, 'dexter')
         self.assertContains(self.response, 'S08E04')
+        self.assertContains(self.response, reverse('remove', kwargs={'id_reminder':1}))
 
     def test_context(self):
         queryset = self.response.context['reminders']

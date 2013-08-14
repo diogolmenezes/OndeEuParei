@@ -13,6 +13,6 @@ class TestAuth(TestCase):
     def test_html(self):
         ''' auth html must have js to redirect to board and close popup '''
         self.assertContains(self.response, '<script')
-        self.assertContains(self.response, 'parent.')
+        self.assertContains(self.response, 'opener.')
         self.assertContains(self.response, reverse('board'))
         self.assertContains(self.response, 'close()')

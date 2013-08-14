@@ -4,9 +4,20 @@
 
 <a href="{% url 'create' %}">{% trans 'create' %}</a>
 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 <ul class="reminder-list">
 {% for reminder in reminders %}
-    <li>{{ reminder.title }} - <span>{{ reminder.place }}</span></li>
+    <li>
+        {{ reminder.title }} - <span>{{ reminder.place }}</span>
+        <a href="{% url 'remove' id_reminder=reminder.pk %}">x</a>
+    </li>
 {% endfor %}
 </ul>
 
