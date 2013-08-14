@@ -4,6 +4,6 @@ from django.contrib.auth.models import User
 
 
 class Reminder(models.Model):
-    title = models.CharField(_('title'), max_length=50, null=False)
-    place = models.CharField(_('place'), max_length=15, null=False)
+    title = models.CharField(_('title'), max_length=20, null=False)
+    place = models.CharField(_('place'), max_length=7, null=False)
     user  = models.ForeignKey(User)

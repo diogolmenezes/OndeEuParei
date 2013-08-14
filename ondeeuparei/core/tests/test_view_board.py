@@ -31,7 +31,6 @@ class TextViewBoardWithLogin(TestCase):
         self.assertContains(self.response, 'href="' + reverse('logout') + '"')
         self.assertContains(self.response, 'href="%s"' % reverse('create'), 1)
         self.assertContains(self.response, '<ul class="reminder-list"', 1)
-        self.assertContains(self.response, '<li', 1)
         self.assertContains(self.response, 'dexter')
         self.assertContains(self.response, 'S08E04')
         self.assertContains(self.response, reverse('remove', kwargs={'id_reminder':1}))

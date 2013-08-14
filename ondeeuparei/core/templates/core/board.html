@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
 
-<a href="{% url 'create' %}">{% trans 'create' %}</a>
+
 
 {% if messages %}
 <ul class="messages">
@@ -15,8 +15,9 @@
 <ul class="reminder-list">
 {% for reminder in reminders %}
     <li>
-        {{ reminder.title }} - <span>{{ reminder.place }}</span>
+        {{ reminder.title }}
         <a href="{% url 'remove' id_reminder=reminder.pk %}">x</a>
+        <span>{{ reminder.place }}</span>
     </li>
 {% endfor %}
 </ul>

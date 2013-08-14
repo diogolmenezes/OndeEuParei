@@ -40,8 +40,6 @@ def create_post(request):
     reminder = form.save(commit=False)
     reminder.user = request.user
     reminder.save()
-
-    messages.success(request, _('Success!'))
     
     return HttpResponseRedirect(reverse('board'))
 

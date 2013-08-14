@@ -50,9 +50,6 @@ class TestValidCreatePost(TestCase):
         ''' valid post must redirect '''
         self.assertRedirects(self.response, reverse('board'))
 
-    def test_show_message_on_save(self):
-        ''' must show message on save '''
-        self.assertContains(self.response, 'Success!')
 
 class TestInvalidCreatePost(TestCase):
     fixtures = ['test_user.json']
