@@ -35,7 +35,16 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = (
+    ('pt-br', u'Portugues'),
+    ('en', u'English'),    
+)
+
+LOCALE_PATHS = (
+    PROJECT_DIR.child('locale'),
+)
 
 SITE_ID = 1
 

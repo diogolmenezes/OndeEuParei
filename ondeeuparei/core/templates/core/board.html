@@ -18,6 +18,7 @@
         {{ reminder.title }}
         <a href="{% url 'remove' id_reminder=reminder.pk %}">x</a>
         <span>{{ reminder.place }}</span>
+        <span>{{ reminder.date | date:"d-m-Y" }}</span>
     </li>
 {% endfor %}
 </ul>

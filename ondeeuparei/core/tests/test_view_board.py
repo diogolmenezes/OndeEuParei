@@ -4,12 +4,13 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from ondeeuparei import settings
 from ondeeuparei.core.models import Reminder
+import datetime
 
 class TestViewBoardNoLogin(TestCase):
 
     def test_login_required(self):
         response = self.client.get(reverse('board'))
-        self.assertRedirects(response, settings.LOGIN_URL + '?next=' + reverse('board') )
+        self.assertRedirects(response, settings.LOGIN_URL + '?next=' + reverse('board'))
 
 class TextViewBoardWithLogin(TestCase):
 
@@ -33,6 +34,7 @@ class TextViewBoardWithLogin(TestCase):
         self.assertContains(self.response, '<ul class="reminder-list"', 1)
         self.assertContains(self.response, 'dexter')
         self.assertContains(self.response, 'S08E04')
+        self.assertContains(self.response, datetime.date.today().strftime('%d-%m-%Y'))
         self.assertContains(self.response, reverse('remove', kwargs={'id_reminder':1}))
 
     def test_context(self):

@@ -43,6 +43,7 @@ def create_post(request):
     
     return HttpResponseRedirect(reverse('board'))
 
+@login_required()
 def remove(request, id_reminder):
     reminder = get_object_or_404(Reminder, pk=id_reminder)
 
