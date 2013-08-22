@@ -5,12 +5,12 @@
         <fieldset>
             {% csrf_token %}
             <p>
-                <label for="{{form.title.id_for_label}}">{{form.title.label}}:</label>
+                <label for="{{form.title.id_for_label}}">{{form.title.label}}:</label><br/>
                 {{form.title}}
                 {{form.title.errors}}
             </p>
             <p>
-                <label for="{{form.place.id_for_label}}">{{form.place.label}}:</label>
+                <label for="{{form.place.id_for_label}}">{{form.place.label}}:</label><br/>
                 {{form.place}}
                 {{form.place.errors}}
             </p>
