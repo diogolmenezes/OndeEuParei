@@ -12,8 +12,9 @@
 <body>
     <section id="login">
         <h1>{% trans 'Where I Was?' %}</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <a href="{% url 'socialauth_begin' 'facebook' %}" class="popup">{% trans 'login with facebook' %}</a>
+        <p>{% trans 'Tired of forgetting which episode of your favorite serie you have stopped? are you forgetting the book page you were?' %}</p>
+        <p>{% trans 'So Where I Was? is perfect for you! Here you can store this information quickly and easily.' %}</p>
+        <a href="{% url 'socialauth_begin' 'facebook' %}" class="popup"><img src="{{STATIC_URL}}img/facebook.png" title="{% trans 'login with facebook' %}"/></a>
     </section>
     <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
 </body>
