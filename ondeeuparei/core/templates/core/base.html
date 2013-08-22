@@ -12,6 +12,7 @@
 <body>
     <header>
         <ul id="menu">
+            <li>{{ user.first_name }} {{ user.last_name }}</li>
             <li><a href="{% url 'create' %}">{% trans 'create' %}</a></li>
             <li><a href="{% url 'logout' %}" title="{% trans 'logout' %}">{% trans 'logout' %}</a></li>
         </ul>
