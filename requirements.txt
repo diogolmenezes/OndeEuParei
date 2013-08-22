@@ -2,3 +2,6 @@ django==1.5.1
 django-social-auth==0.7.25
 Unipath==1.0
 model-mommy
+dj-database-url==0.2.1
+gunicorn==0.17.2
+psycopg2

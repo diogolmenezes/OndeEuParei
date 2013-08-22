@@ -1,0 +1,30 @@
+/* =Geral
+-----------------------------------------------------------------------------*/
+*        { margin:0px; padding:0px; }
+body     { font:15px Arial; }
+p        { line-height: 20px; margin-bottom:15px; }
+fieldset { border:none; }
+ul       { list-style: none; }
+a        { color:#AB4843; }
+a:hover  { text-decoration:underline !important; }
+input[type=text] { text-transform: uppercase; }
+
+/* =Login
+-----------------------------------------------------------------------------*/
+#login    { text-align: center; }
+#login h1 { border-bottom: 1px solid #f5f5f5; padding: 10px; margin-bottom: 20px; }
+
+/* =Header
+-----------------------------------------------------------------------------*/
+header            { padding: 10px 10px; height: 20px; border-bottom: 1px solid #f5f5f5; }
+header ul#menu    { float:right; }
+header ul#menu li { display: inline; margin-left: 5px; }
+
+/* =content
+-----------------------------------------------------------------------------*/
+#content  { padding:20px 10px; }
+#content .success { background: #43AB67; color: #FFF; padding: 5px; margin-bottom: 5px; }
+#content ul.reminder-list li span { background: #43ABA6; color:#FFF; float: right; width: 80px; text-align: center; padding: 3px 5px; }
+#content ul.reminder-list li span.date { background: #B099A1; margin-left:5px; }
+#content ul.reminder-list li a    { float: right; margin-left: 5px; background: #AB4843; color: #FFF; padding: 3px 5px; text-decoration: none; }
+#content ul.reminder-list li      { background: #f5f5f5; padding: 10px; margin-bottom: 5px; text-transform: uppercase; }

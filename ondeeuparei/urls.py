@@ -23,3 +23,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+
+from django.conf import settings
+pattern = r'^%s/(?P<path>.*)$' % settings.STATIC_URL
+urlpatterns += patterns('django.views.static',
+    url(pattern, 'serve', {'document_root': settings.STATIC_ROOT}),
+)
