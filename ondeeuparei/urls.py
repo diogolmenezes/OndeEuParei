@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 urlpatterns = patterns('',
     url(r'^$', 'ondeeuparei.core.views.login', name='login'),
     url(r'^board/create/', 'ondeeuparei.core.views.create', name='create'),
+    url(r'^board/edit/(?P<id_reminder>\d{1,4})/', 'ondeeuparei.core.views.edit', name='edit'),
     url(r'^board/', 'ondeeuparei.core.views.board', name='board'),
     url(r'^remove/(?P<id_reminder>\d{1,4})/', 'ondeeuparei.core.views.remove', name='remove'),
     url(r'^auth/', TemplateView.as_view(template_name='core/auth.html'), name='auth'),

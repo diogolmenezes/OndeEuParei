@@ -19,7 +19,7 @@ class TestViewCreate(TestCase):
         self.assertEqual(200, self.response.status_code)
 
     def test_template(self):
-        self.assertTemplateUsed(self.response, 'core/create.html')
+        self.assertTemplateUsed(self.response, 'core/form.html')
 
     def test_context(self):
         form = self.response.context['form']

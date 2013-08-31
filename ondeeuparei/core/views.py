@@ -28,20 +28,26 @@ def create(request):
     if(request.method == 'POST'):
         return create_post(request)
     else:
-        return render(request, 'core/create.html', {'form' : ReminderForm() })
+        return render(request, 'core/form.html', {'form' : ReminderForm() })
 
 @login_required()
 def create_post(request):
     form = ReminderForm(request.POST)
-    
+
     if not form.is_valid():
-        return render(request, 'core/create.html', { 'form' : form })
-    
+        return render(request, 'core/form.html', { 'form' : form })
+
     reminder = form.save(commit=False)
     reminder.user = request.user
     reminder.save()
-    
+
     return HttpResponseRedirect(reverse('board'))
+
+@login_required
+def edit(request, id_reminder):
+    pass
+    #reminder = get_object_or_404(Reminder, pk=id_reminder)
+    #return render(request, 'core/form.html', {'form' : ReminderForm(reminder) })
 
 @login_required()
 def remove(request, id_reminder):
